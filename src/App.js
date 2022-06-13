@@ -1,28 +1,23 @@
-// import './App.css';
-// import Header from './Header';
+import React, { useState } from "react";
 
-// // BEM - block element modified
-// //block__element--modifier
-
-// // functional component - function that returns something
-// function App() {
-//   return (
-//     <div className="App">
-//       <Header />
-//       <h1 className="app__title">This is a title</h1>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-import React, { Component } from 'react'
-// class based:
 function App() {
-    return (
-      <div>App</div>
-    );
+  const [count, setCount] = useState(0);
+  
+  const increment = () => {
+    setCount(count + 1);
+  }
+  const decrement = () => {
+    setCount(count - 1);
+  }
+
+  return (
+    <div className="App">
+      <h1 className="app__title">Welcome to my counter app</h1>
+      <p>the count is {count}</p>
+      <button onClick={decrement}>-</button>
+      <button onClick={increment}>+</button>
+    </div>
+  );
 }
 
 export default App;
