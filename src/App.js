@@ -19,10 +19,10 @@
 
 import React, { Component } from 'react'
 // class based:
-class App extends Component {
-  render() {
+function App() {
     return (
       <div>App</div>
-    )
-  }
+    );
 }
+
+export default App;
