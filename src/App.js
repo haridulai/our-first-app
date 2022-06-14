@@ -1,29 +1,33 @@
-import React from "react";
-import Product from "./Product";
+import React, { useState } from "react";
 
 function App() {
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState("");
+
+  const addTodo = (e) => {
+    e.preventDefault(); // prevent refresh
+    setTodos([...todos, input]);
+    setInput("");
+  };
+
   return (
     <div>
-      <h1>Hello world</h1>
+      <h1>Welcome to my todo list</h1>
+      <form>
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          type="text"
+        />
+        <button type="submit" onClick={addTodo}>
+          Add Todo
+        </button>
+      </form>
 
-      <Product
-        name="Amazon Echo"
-        description="Your AI assistant"
-        price={59.99}
-      />
-
-      <Product name="iPhone" description="the best iphone" price={1200} />
-
-      <Product
-        name="Macbook Pro"
-        description="Your Favourite Computer"
-        price={2500}
-      />
-
-      {/* Product name descript price*/}
-      {/* Product */}
-      {/* Product */}
-      {/* Product */}
+      <h2>List of Todos</h2>
+      {todos.map((todo) => (
+        <p>{todo}</p>
+      ))}
     </div>
   );
 }
