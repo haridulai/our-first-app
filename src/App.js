@@ -1,21 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
+import Product from "./Product";
 
 function App() {
-  const [count, setCount] = useState(0);
-  
-  const increment = () => {
-    setCount(count + 1);
-  }
-  const decrement = () => {
-    setCount(count - 1);
-  }
-
   return (
-    <div className="App">
-      <h1 className="app__title">Welcome to my counter app</h1>
-      <p>the count is {count}</p>
-      <button onClick={decrement}>-</button>
-      <button onClick={increment}>+</button>
+    <div>
+      <h1>Hello world</h1>
+
+      <Product
+        name="Amazon Echo"
+        description="Your AI assistant"
+        price={59.99}
+      />
+
+      <Product name="iPhone" description="the best iphone" price={1200} />
+
+      <Product
+        name="Macbook Pro"
+        description="Your Favourite Computer"
+        price={2500}
+      />
+
+      {/* Product name descript price*/}
+      {/* Product */}
+      {/* Product */}
+      {/* Product */}
     </div>
   );
 }
